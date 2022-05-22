@@ -38,7 +38,14 @@ console.log(getSum2dArrMult2(arr1));
 // 4.
 
 const addProperty = function(key, value, object){
-    return (object[key] = value)
+    if(object[key]){
+        console.log('Уже есть')
+        return
+    }
+    else{
+        return (object[key] = value)
+    }
+
 }
 
 const cat = {
@@ -47,6 +54,6 @@ const cat = {
 
 addProperty('Age', 9, cat)
 console.log(cat)
+addProperty('name', 'Alisa', cat)
+console.log(cat)
 
-
-// 5.

@@ -1,60 +1,61 @@
 // 1.
 
-// const citiesAndCountries = {
-// 	'Киев': 'Украина',
-// 	'Нью-Йорк': 'США',
-// 	'Амстердам': 'Нидерланды',
-// 	'Берлин': 'Германия',
-// 	'Париж': 'Франция',
-// 	'Лиссабон': 'Португалия',
-// 	'Вена': 'Австрия',
-// };
+const citiesAndCountries = {
+	'Киев': 'Украина',
+	'Нью-Йорк': 'США',
+	'Амстердам': 'Нидерланды',
+	'Берлин': 'Германия',
+	'Париж': 'Франция',
+	'Лиссабон': 'Португалия',
+	'Вена': 'Австрия',
+};
 
 
-// function getCity(){
-//     let res = []
-//     let arr = Object.entries(citiesAndCountries)
-//     for (i of arr) {
-//         res.push(`${i[0]} - это ${i[1]}`)
-//     }
-//     return res
+function getCity(){
+    let res = []
+    let arr = Object.entries(citiesAndCountries)
+    for (i of arr) {
+        res.push(`${i[0]} - это ${i[1]}`)
+    }
+    return res
 
-// }
-// const result = getCity()
-// console.log('res ', result)
+}
+const result = getCity()
+console.log('res ', result)
 
-// function getCity2(){
-//     let res = []
-//     let arr = Object.entries(this)
-//     for (i of arr) {
-//         res.push(`${i[0]} - это ${i[1]}`)
-//     }
-//     return res
-// }
+function getCity2(){
+    let res = []
+    let arr = Object.entries(this)
+    for (i of arr) {
+        res.push(`${i[0]} - это ${i[1]}`)
+    }
+    return res
+}
 
-// const result2 = getCity2.call(citiesAndCountries)
-// console.log('res2', result2)
+const result2 = getCity2.call(citiesAndCountries)
+console.log('res2', result2)
 
 // 2.
 
-// const week = {
-//     ru: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-//     en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-// }
+const week = {
+    ru: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+    en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+}
 
-// function getNameOfDay(lang, datNumber){
-//     if(Object.keys(week).includes(lang)){
-//         return week[lang][datNumber-1]
-//     }
-//     else{
-//         return 'There are no such language'
-//     }
+function getNameOfDay(lang, datNumber){
+    if(Object.keys(week).includes(lang) && datNumber > 0 && datNumber < 8){
+        return week[lang][datNumber-1]
+    }
+    else{
+        return 'There are no such language or the number is wrong'
+    }
 
-// }
+}
 
-// console.log(getNameOfDay('en', 4))
-
-// 3, 4.
+console.log(getNameOfDay('en', 4))
+console.log(getNameOfDay('de', 2))
+console.log(getNameOfDay('ru', 10))
+// Соеденил задания 3, 4 (мне показалось, что в задании тоже нужно было как одно сделать).
 
 const person = {
     name: 'Vlad',
